@@ -48,3 +48,10 @@ _（还没有动态。第一条真实条目由首次 digest 追加，格式如�
 - 协作偏好：结论先行 / 主动提案不越权 / 交付前自验 / 不确定标注 / 不堆排版 / 怪需求先当实验 → 新建 `user/preferences.md`，`user/profile.md` 存摘要。
 - `BOOTSTRAP.md` status: pending → **complete**，全部 9 项勾完；`index.md` 补 preferences 一行。
 - 备注：记忆库当前不是 git 仓库（无 .git），BOOTSTRAP 第 4 条要求的提交无法执行，待用户决定是否 git init。
+
+## [2026-10-28] memory | 记忆库纳入 git 并推送到远端
+- 按用户要求，先清理了 `log.md` 中两条临时做事记录（细节不入库，不保留副本）。
+- 记忆库 `C:\Users\11379\.memory` 执行 `git init -b main`，空目录用 `.gitkeep` 占位，首个提交 `bf08bce`（铸魂完成的全部产物）。
+- 远端：`https://github.com/0478hhh/dafeiyu.git`，分支 `main` 已推送并建立 upstream 跟踪。
+- 坑：直连 GitHub 被 reset（本机系统代理 `127.0.0.1:10808` 开着），已在**仓库级** `http.proxy`/`https.proxy` 指向该代理后推送成功；未改全局配置。
+- 影响：以后每次记忆更新都应 `git add -A && git commit && git push`，记忆才有历史可回滚、才能在别的机器上恢复。
